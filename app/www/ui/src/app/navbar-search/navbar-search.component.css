@@ -1,0 +1,29 @@
+.search-hover {
+    background: url("../../assets/img/search/search-12-xxl.png") no-repeat left;
+    color: white;
+    border: 1px solid #ccc;
+    outline: none;
+    background-size: 22px;
+    background-position: 13px;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    padding: 25px;
+    transition: all .5s;
+}
+.search-hover:hover {
+    width: 300px;
+    padding-left: 50px;
+}
+@media screen and (max-width: 600px) {
+    .search-hover:hover {
+        width: 200px;
+        padding-left: 50px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .search-hover:hover {
+        width: 150px;
+        padding-left: 50px;
+    }
+}

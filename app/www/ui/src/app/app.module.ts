@@ -3,12 +3,15 @@ import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
-import { AppNavbarComponent } from './app-navbar/app-navbar.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarSearchComponent } from './navbar-search/navbar-search.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppNavbarComponent
+    NavbarComponent,
+    NavbarSearchComponent
   ],
   imports: [
     BrowserModule,
