@@ -15,15 +15,42 @@
     width: 300px;
     padding-left: 50px;
 }
+
+.result-item {
+    width: 300px;
+    padding-left: 50px;
+}
 @media screen and (max-width: 600px) {
     .search-hover:hover {
         width: 200px;
         padding-left: 50px;
     }
+
+    .result-item {
+        width: 200px;
+        padding-left: 50px;
+    }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
     .search-hover:hover {
         width: 150px;
         padding-left: 50px;
+    }
+
+    .result-item {
+        width: 150px;
+        padding-left: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .search-hover:hover {
+        width: 0;
+        padding-left: 50px;
+    }
+
+    .result-item {
+        width: 0;
+        padding-left: 0;
     }
 }

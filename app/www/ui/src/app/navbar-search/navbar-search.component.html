@@ -1,13 +1,8 @@
 
-<div id="search-component">
+<ng-template #rt let-r="result" let-t="term">
+  <p class="result-item">{{r}}</p>
+</ng-template>
 
-    <input type="text" class="search-hover" name="" placeholder="search ...">
+<input id="typeahead-basic" type="text" class="search-hover" [(ngModel)]="model" [ngbTypeahead]="search" [resultTemplate]="rt" placeholder="search ..."/>
 
-    <!--<ul class="search-result">-->
-        <!--<li *ngFor="let result of results" >-->
-            <!--<a>-->
-                <!--result-->
-            <!--</a>-->
-        <!--</li>-->
-    <!--</ul>-->
-</div>
+
