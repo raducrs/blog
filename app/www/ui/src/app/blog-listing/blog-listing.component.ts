@@ -15,6 +15,10 @@ import {BlogEntryDetail} from '../models/BlogEntryDetail';
 export class BlogListingComponent implements OnInit {
 
   blogEntries: BlogEntryDetail[] = null;
+  blogNextLink = '/home';
+  blogPrevLink = '';
+
+
   blogFeatureEntries: BlogEntryDetail[] = null;
 
   constructor(private blogListingService: BlogListingService,
