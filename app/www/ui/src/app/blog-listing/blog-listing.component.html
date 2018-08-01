@@ -22,7 +22,7 @@
         Latest
       </h3>
 
-      <div class="blog-post" *ngFor="let blogEntrie of blogEntries" >
+      <div class="blog-post post" *ngFor="let blogEntrie of blogEntries" >
         <h2 class="blog-post-title">{{blogEntrie.title}}</h2>
         <p class="lead"><i class="fa fa-user"></i> by <a href="#">Radu</a></p>
         <hr>
@@ -41,7 +41,7 @@
 
 
 
-      <nav class="blog-pagination">
+      <nav class="blog-pagination pagination d-flex justify-content-between">
         <a class="btn" [ngClass]="{'disabled': blogPrevLink === '','btn-outline-primary': blogPrevLink !== '', 'btn-outline-secondary': blogPrevLink === ''}" [routerLink]="blogPrevLink">Older</a>
         <a class="btn" [ngClass]="{'disabled': blogNextLink === '','btn-outline-primary': blogNextLink !== '', 'btn-outline-secondary': blogNextLink == ''}"  [routerLink]="blogNextLink">Newer</a>
       </nav>
