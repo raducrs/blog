@@ -7,7 +7,11 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NavbarSearchComponent } from './navbar-search/navbar-search.component';
 import { NavbarSignInComponent } from './navbar-sign-in/navbar-sign-in.component';
-import { BlogListingComponent } from './blog-listing/blog-listing.component';
+import {BlogListingComponent, FeaturedHeadingComponent} from './blog-listing/blog-listing.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { RoutingModule } from './routing.module';
+
+import { FeaturedEntryComponent } from './blog-listing/blog-listing.component';
 
 
 @NgModule({
@@ -16,12 +20,18 @@ import { BlogListingComponent } from './blog-listing/blog-listing.component';
     NavbarComponent,
     NavbarSearchComponent,
     NavbarSignInComponent,
-    BlogListingComponent
+
+    BlogListingComponent,
+    FeaturedHeadingComponent,
+    FeaturedEntryComponent,
+
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    RoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
