@@ -4,21 +4,25 @@ import com.apptozee.blogpages.models.BlogPage;
 import com.apptozee.blogpages.services.RetrievalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
+import org.springframework.hateoas.ExposesResourceFor;
 import org.springframework.hateoas.Resource;
 import org.springframework.hateoas.Resources;
 import org.springframework.hateoas.mvc.ControllerLinkBuilder;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 
 
 @RestController
+@ExposesResourceFor(BlogPage.class)
+@RequestMapping("/pages")
 public class BlogPages {
 
     @Autowired
     private RetrievalService retrievalService;
 
-    @GetMapping("blog/pages")
+    @GetMapping(value = "")
     public Resources<BlogPage> getBlogPages(@RequestParam(value = "start", required = false) Integer start, @RequestParam(value = "size", required = false) Integer size,
                                             @RequestParam(value = "sortDirection", required = false) String sortDirectionStr, @RequestParam(value = "sortBy" , required = false) String sortBy){
 
@@ -63,7 +67,7 @@ public class BlogPages {
     }
 
 
-    @GetMapping("blog/pages/{id:[0-9]+}")
+    @GetMapping("{id:[0-9]+}")
     public Resource<BlogPage> getBlogPageById(@PathVariable("id") String pageId){
         BlogPage blogPage = retrievalService.getBlogPageById(Integer.valueOf(pageId));
         Resource<BlogPage> blogPageResource = new Resource<>(blogPage);
@@ -72,13 +76,13 @@ public class BlogPages {
         return blogPageResource;
     }
 
-    @PostMapping("blog/pages")
+    @PostMapping("")
     @ResponseBody
     public BlogPage addBlogPage(@RequestBody BlogPage blogPage){
         return retrievalService.addBlogPage(blogPage);
     }
 
-    @PutMapping("blog/pages/{id:[0-9]+}")
+    @PutMapping("{id:[0-9]+}")
     @ResponseBody
     public BlogPage updateBlogPage(@RequestBody BlogPage blogPage, @PathVariable("id") String pageId){
         Integer idPage = Integer.valueOf(pageId);
@@ -91,7 +95,7 @@ public class BlogPages {
         return retrievalService.updateBlogPage(blogPage);
     }
 
-    @DeleteMapping("blog/pages/{id:[0-9]+}")
+    @DeleteMapping("{id:[0-9]+}")
     public void deleteBlogPage(@PathVariable("id") String pageId){
         retrievalService.deleteBlogPage(Integer.valueOf(pageId));
     }
