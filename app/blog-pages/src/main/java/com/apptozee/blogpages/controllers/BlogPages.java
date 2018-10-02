@@ -2,6 +2,7 @@ package com.apptozee.blogpages.controllers;
 
 import com.apptozee.blogpages.models.BlogPage;
 import com.apptozee.blogpages.services.RetrievalService;
+import com.apptozee.blogpages.services.discovery.Discovery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
 import org.springframework.hateoas.ExposesResourceFor;
@@ -21,6 +22,9 @@ public class BlogPages {
 
     @Autowired
     private RetrievalService retrievalService;
+
+    @Autowired
+    private Discovery discovery;
 
     @GetMapping(value = "")
     public Resources<BlogPage> getBlogPages(@RequestParam(value = "start", required = false) Integer start, @RequestParam(value = "size", required = false) Integer size,
