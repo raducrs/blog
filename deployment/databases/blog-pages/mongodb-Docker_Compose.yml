@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  blog_pages_mongo:
+    restart: always
+    image: mongo:4.0.0-xenial
+    ports:
+      - 27017:27017
+    volumes:
+      - ./docker_data/mongo:/data/db

@@ -1,0 +1,13 @@
+FROM apptozee.com/java:oracle-java8
+
+RUN mkdir /service
+
+#RUN apt-get update && apt-get install -y curl
+
+#RUN curl http://localhost:8081/artifactory/libs-release-local/com/apptozee/service-discovery/0.0.1/service-discovery-0.0.1-spring-boot.jar -o /service/service.jar
+
+COPY service-discovery-0.0.1-spring-boot.jar /service/service.jar
+
+WORKDIR /service
+
+CMD java -jar service.jar

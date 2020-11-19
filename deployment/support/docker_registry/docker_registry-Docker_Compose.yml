@@ -1,0 +1,9 @@
+registry:
+  restart: always
+  image: registry:2
+  ports:
+    - 4243:5000
+  volumes:
+    - ./docker_data/registry:/var/lib/registry
+    
+

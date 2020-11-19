@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  service-discovery:
+    build:
+      context: .
+      dockerfile: service_discovery-Dockerfile
+    image: apptozee.com/service-discovery:0.0.1
+    ports:
+      - 8761:8761
+

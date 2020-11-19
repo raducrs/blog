@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  api-gateway:
+    build:
+      context: .
+      dockerfile: api_gateway-Dockerfile
+    image: apptozee.com/api-gateway:0.0.1
+    ports:
+      - 8765:8765
+
